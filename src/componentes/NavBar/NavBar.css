@@ -5,6 +5,7 @@
     padding: 1rem 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -18,3 +19,4 @@
 .navegacion__enlace:hover {
     color: var(--secundario);
 }
+

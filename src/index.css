@@ -1,9 +1,9 @@
 :root {
-  --primario: #9c27b0;
-  --primarioOscuro: #89119D;
-  --secundario: #FFCE00;
+  --primario: #222121;
+  --primarioOscuro: #4e4e4e;
+  --secundario: #ecb80c;
   --secundarioOscuro: rgb(233, 287, 2);
-  --blanco: #FFF;
+  --blanco: rgb(0, 0, 0);
   --negro: #000;
 
   --fuentePrincipal: 'Staatliches', cursive;
@@ -37,4 +37,10 @@ a {
 
 img {
   width: 100%;
+}
+
+.sombra {
+  -webkit-box-shadow: 4px 3px 2px 0px rgba(250, 170, 32, 1);
+  -moz-box-shadow: 4px 3px 2px 0px rgba(250, 170, 32, 1);
+  box-shadow: 4px 3px 2px 0px rgba(250, 170, 32, 1);
 }

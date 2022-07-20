@@ -1,0 +1,32 @@
+/*Productos*/
+
+.producto {
+    background-color: var(--primarioOscuro);
+}
+
+.producto__nombre {
+    font-size: 3rem;
+}
+
+.producto__precio {
+    font-size: 2.4rem;
+    color: var(--secundario);
+}
+
+@media (min-width: 768px) {
+    .producto__nombre {
+        font-size: 4rem;
+    }
+
+    .producto__precio {
+        font-size: 2.8rem;
+    }
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 3rem;
+}

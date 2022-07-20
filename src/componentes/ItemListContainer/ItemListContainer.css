@@ -1,0 +1,23 @@
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+    font-size: 4rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
