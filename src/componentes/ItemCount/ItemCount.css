@@ -1,0 +1,35 @@
+.conteiner {
+    background-color: var(--primarioOscuro);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+h3{
+    width: 100%;
+    background-color: var(--blanco);
+    font-weight: 500;
+}
+.conteiner-count {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.conteiner-count p {
+    font-size: 3rem;
+}
+
+.conteiner-count button {
+    height: 5rem;
+    width: 5rem;
+    background-color: white;
+    border: none;
+    font-size: 3rem;
+    color: var(--secundario);
+}

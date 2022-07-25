@@ -9,6 +9,7 @@ function App() {
       <Header />
       <NavBar />
       <ItemListContainer />
+      <br></br>
     </>
   );
 }
