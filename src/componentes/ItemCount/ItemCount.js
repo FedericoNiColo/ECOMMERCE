@@ -3,14 +3,16 @@ import React, { useEffect, useState } from 'react';
 
 
 const ItemCount = (props) => {
-    
+
     const { stock } = props;
 
     const [count, setCount] = useState(1);
 
     const addShirt = () => {
 
-        setCount(count < stock ? count + 1 : count);
+        if (count < stock) {
+            setCount(count + 1);
+        }
     }
 
     const removeShirt = () => {
