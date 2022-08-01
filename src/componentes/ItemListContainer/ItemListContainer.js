@@ -18,7 +18,7 @@ const ItemListContainer = () => {
     useEffect(() => {
 
         getProducts
-            .then((resolve) => {
+            .then((resolve) => {   //el (resolve) es la lista de productos. La respuesta de lo q devuelve la linea 14 
 
                 setListProducts(resolve)
             })
@@ -32,7 +32,7 @@ const ItemListContainer = () => {
         <main className="contenedor">
             <h1>Nuestros productos</h1>
             <div className="grid">
-                <ItemList listProducts={listProducts}/>
+                <ItemList listProducts={listProducts} />
                 <div className="grafico grafico--camisas"></div>
                 <div className="grafico grafico--node"></div>
             </div>
