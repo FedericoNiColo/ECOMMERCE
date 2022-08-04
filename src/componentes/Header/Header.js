@@ -1,11 +1,12 @@
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header className="header">
-            <a href="index.html">
+            <Link to="/">
                 <img className="header__logo" src="/Img/logo.png" alt="logo"></img>
-            </a>
+            </Link>
         </header>
     )
 }

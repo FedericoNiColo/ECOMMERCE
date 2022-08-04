@@ -2,101 +2,130 @@ const products = [
     {
         id: 10,
         nombre: "VueJS",
+        categoria: "Remera",
         precio: 2500,
-        img: './img/1.jpg',
+        img: '/Img/1.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 7
     },
     {
         id: 11,
-        nombre: "Angular",
+        nombre: "Angular JS",
+        categoria: "Remera",
         precio: 2300,
-        img: './img/2.jpg',
+        img: '/Img/2.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 4
     },
     {
         id: 12,
         nombre: "React JS",
-        precio: 3200,
-        img: './img/3.jpg',
+        categoria: "Buzo",
+        precio: 8200,
+        img: '/Img/16.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 12
     },
     {
         id: 13,
         nombre: "ReduxS",
+        categoria: "Remera",
         precio: 2500,
-        img: './img/4.jpg',
+        img: '/Img/4.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 18
     },
     {
         id: 14,
         nombre: "Node.js",
+        categoria: "Remera",
         precio: 2800,
-        img: './img/5.jpg',
+        img: '/Img/5.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 16
     },
     {
         id: 15,
-        nombre: "SASS",
-        precio: 2000,
-        img: './img/6.jpg',
+        nombre: "Javascript",
+        categoria: "Buzo",
+        precio: 7300,
+        img: '/Img/15.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 12
     },
     {
         id: 16,
         nombre: "HTML5",
+        categoria: "Remera",
         precio: 1800,
-        img: './img/7.jpg',
+        img: '/Img/7.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 10
     },
     {
         id: 17,
         nombre: "GitHub",
+        categoria: "Remera",
         precio: 2700,
-        img: './img/8.jpg',
+        img: '/Img/8.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 13
     },
     {
         id: 18,
         nombre: "Bulma",
+        categoria: "Remera",
         precio: 3200,
-        img: './img/9.jpg',
+        img: '/Img/9.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 16
     },
     {
         id: 19,
         nombre: "TypeScript",
+        categoria: "Remera",
         precio: 2500,
-        img: './img/10.jpg',
+        img: '/Img/10.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 10
     },
     {
         id: 20,
-        nombre: "Drupal",
-        precio: 2800,
-        img: './img/11.jpg',
-        stock: 12
+        nombre: "GitHub",
+        categoria: "Buzo",
+        precio: 6800,
+        img: '/Img/6.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
+        stock: 18
     },
     {
         id: 21,
         nombre: "Javascript",
+        categoria: "Remera",
         precio: 3200,
-        img: './img/12.jpg',
+        img: '/Img/12.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
         stock: 8
     },
     {
         id: 22,
-        nombre: "GraphQL",
-        precio: 1800,
-        img: './img/13.jpg',
-        stock: 18
+        nombre: "Drupal",
+        categoria: "Remera",
+        precio: 2800,
+        img: '/Img/11.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
+        stock: 12
     },
     {
         id: 23,
-        nombre: "WordPress",
-        precio: 2700,
-        img: './img/14.jpg',
-        stock: 12
+        nombre: "Angular",
+        categoria: "Buzo",
+        precio: 7300,
+        img: '/Img/17.jpg',
+        descrip: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi accusamus voluptatibus, provident culpa deleniti odio corrupti enim, vitae dolor nostrum dolorum quibusdam quas architecto voluptatequi maiores fuga, inventore voluptatem.",
+        stock: 18
     }
+    
 
 ]
 

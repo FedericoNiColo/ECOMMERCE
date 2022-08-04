@@ -1,48 +1,36 @@
 import './ItemDetailContainer.css';
 import { useEffect, useState } from 'react';
-import productDetail from '../utils/product.detail.mock';
-import ItemDetail from './ItemDetail';
+import products from '../utils/products.mock';
+import { useParams } from 'react-router-dom';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
-    const [itemProduct, setItemProduct] = useState([]);
-
-    const getItem = new Promise((resolve, reject) => {
-
-        setTimeout(() => {
-
-            resolve(productDetail)
-            console.log(itemProduct);
-        }, 2000)
-    })
+    const [dataProduct, setDataProduct] = useState({});
+    const { id } = useParams();
 
     useEffect(() => {
 
-        getItem
-            .then((res) => {   //el (resolve) es la lista de productos. La respuesta de lo q devuelve la linea 14 
+        filterId();
+    }, []);
 
-                setItemProduct(res);
-                console.log(itemProduct);
-            })
-            .catch((error) => {
-                console.log("error en la llamada a la BD");
-            })
-    }, [])
-
+    const filterId = () => {
+        products.filter((product) => {
+            if (product.id == id) {
+                setDataProduct(product);
+                console.log(product);
+            }
+        })
+    }
 
 
     return (
         <>
             <main className="contenedor">
-                {itemProduct.map((product, i) => {
-                    console.log(product);
-                    return <ItemDetail key={i} data={product} />
-                })}
-            </main>
 
-            <footer className="footer">
-                <p className="footer__texto">Front End Store - Todos los derechos Reservados 2022</p>
-            </footer>
+                <ItemDetail dataProduct={dataProduct} />
+
+            </main>
         </>
     )
 }
