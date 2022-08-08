@@ -1,35 +1,50 @@
 import './ItemCount.css';
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 
+const ItemCount = ({ stock, setCountSelected, setWaist }) => {
 
-const ItemCount = (props) => {
-
-    const { stock } = props;
-
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
 
     const addShirt = () => {
 
-        if (count < stock) {
-            setCount(count + 1);
-        }
+        setCount(count < stock ? count + 1 : count);
+        console.log(count);
     }
 
+
     const removeShirt = () => {
-        setCount(count > 1 ? count - 1 : 1);
+        setCount(count > 0 ? count - 1 : 0);
+        console.log("menos");
+    }
+
+    const onAdd = () => {
+        setCountSelected(count);
+
+    }
+
+    const handleChange = (e) => {
+        setWaist(e.target.value);
     }
 
     return (
+        <>
+            <select className="formulario__campo" onChange={handleChange}>
+                <option disabled selected>Seleccionar talle</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
 
-        <div className="conteiner">
-
-            <h3>Cantidad</h3>
-            <div className="conteiner-count">
+            <div className="container-count">
+                <p>Cantidad</p>
                 <button onClick={removeShirt}>-</button>
                 <p>{count}</p>
                 <button onClick={addShirt}>+</button>
             </div>
-        </div>
+            <button className="add" onClick={onAdd}> agregar al carrito </button>
+
+        </>
     )
 }
 

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './componentes/Footer/Footer';
 import Us from './pages/Us/Us';
 import Detail from './pages/Detail';
+import Checkout from './pages/Checkout';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/us/" element={<Us />} />
         <Route path="/product/:id" element={<Detail />} />
         <Route path="/category/:categoryName" element={<ItemListContainer />} />
+        <Route path="/cart" element={<Checkout />} />
         <Route path="*" element={<h1>ERROR 404- PAGINA NO ENCONTRADA</h1>} />
       </Routes>
 

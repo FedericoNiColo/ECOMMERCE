@@ -1,13 +1,16 @@
-import Form from '../ItemDetailContainer/Form'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import ItemCount from '../ItemCount/ItemCount';
 import '../ItemDetailContainer/ItemDetailContainer.css';
 
 const ItemDetail = ({ dataProduct }) => {
-
     const { id, nombre, categoria, precio, img, descrip, stock } = dataProduct;
+
+    const [countSelected, setCountSelected] = useState(0)
+    const [waist, setWaist] = useState("");
 
     return (
         <>
-
 
             <div className="camisa">
                 <img className="camisa__imagen" src={img} alt="imagen del producto" />
@@ -15,8 +18,18 @@ const ItemDetail = ({ dataProduct }) => {
                 <div className="camisa__contenido">
                     <h1 className='dataDetail'>{categoria}{' '}{nombre}</h1>
                     <p>{descrip}</p>
-                    <h2 className='dataDetail'>$ {precio}</h2>
-                    <Form />
+                    <h2 className='dataDetail'>$ {precio} </h2>
+
+                    {
+                        countSelected > 0 ? <button className="add addLn"><Link to="/cart">terminar compra</Link></button>
+                            : <ItemCount
+                                stock={stock}
+                                setCountSelected={setCountSelected}
+                                setWaist={setWaist}
+                                
+                            />
+                    }
+
                 </div>
             </div>
 

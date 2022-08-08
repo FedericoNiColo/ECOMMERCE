@@ -11,7 +11,6 @@ const ItemProduct = ({ data }) => {
                 <div className="producto__informacion">
                     <p className="producto__nombre">{nombre}</p>
                     <p className="producto__precio">$ {precio}</p>
-                    {/* <ItemCount stock={stock}/> */}
                 </div>
             </div>
         </Link>

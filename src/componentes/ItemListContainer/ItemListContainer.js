@@ -5,7 +5,6 @@ import products from '../utils/products.mock'
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-
     const [listProducts, setListProducts] = useState([]);
     const { categoryName } = useParams();
 

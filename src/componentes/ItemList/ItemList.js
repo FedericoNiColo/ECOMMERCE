@@ -10,7 +10,6 @@ const ItemList = ( {listProducts} ) => {
                 return <ItemProduct key={product.id} data={product}/>
             })}
 
-
         </>
     )
 }
