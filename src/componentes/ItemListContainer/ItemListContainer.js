@@ -12,13 +12,11 @@ const ItemListContainer = () => {
 
     const getProducts = new Promise((resolve, reject) => {
 
-        setTimeout(() => {
             if (categoryName) {
                 resolve(filterCategory)
             }
             resolve(products);
 
-        }, 2000)
     })
 
     useEffect(() => {

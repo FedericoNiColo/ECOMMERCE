@@ -7,29 +7,31 @@ import Footer from './componentes/Footer/Footer';
 import Us from './pages/Us/Us';
 import Detail from './pages/Detail';
 import Checkout from './pages/Checkout';
-
+import { useContext } from 'react'
+import CartProvider from './Context/CartContext';
 
 function App() {
 
 
   return (
-    <BrowserRouter>
 
-      <Header />
-      <NavBar />
+    <CartProvider>
+      <BrowserRouter>
+        <Header />
+        <NavBar />
 
-      <Routes>
-        <Route path="/" element={<ItemListContainer />} />
-        <Route path="/us/" element={<Us />} />
-        <Route path="/product/:id" element={<Detail />} />
-        <Route path="/category/:categoryName" element={<ItemListContainer />} />
-        <Route path="/cart" element={<Checkout />} />
-        <Route path="*" element={<h1>ERROR 404- PAGINA NO ENCONTRADA</h1>} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/us/" element={<Us />} />
+          <Route path="/product/:id" element={<Detail />} />
+          <Route path="/category/:categoryName" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Checkout />} />
+          <Route path="*" element={<h1>ERROR 404- PAGINA NO ENCONTRADA</h1>} />
+        </Routes>
 
-      <Footer />
-
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

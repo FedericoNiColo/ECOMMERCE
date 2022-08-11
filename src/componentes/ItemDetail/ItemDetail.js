@@ -23,10 +23,10 @@ const ItemDetail = ({ dataProduct }) => {
                     {
                         countSelected > 0 ? <button className="add addLn"><Link to="/cart">terminar compra</Link></button>
                             : <ItemCount
-                                stock={stock}
+                                dataProduct={dataProduct}
                                 setCountSelected={setCountSelected}
                                 setWaist={setWaist}
-                                
+                                waist={waist}
                             />
                     }
 
