@@ -1,6 +1,6 @@
 import './ItemCount.css';
 import { useState, useContext } from 'react';
-import { CartContext, CartProvider } from '../../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 
 const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
 
@@ -25,13 +25,14 @@ const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
 
         const newProduct = {
             id: id,
-            name: nombre,
+            name: categoria + " " + nombre,
             price: precio,
             image: img,
             description: descrip,
             stock: stock,
             quantity: count,
-            waist: waist
+            waist: waist,
+            total: precio * count
         }
 
         if (count > 0) {
@@ -41,13 +42,9 @@ const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
 
     }
 
-    const handleChange = (e) => {
-        setWaist(e.target.value);
-    }
-
     return (
         <>
-            <select className="formulario__campo" onChange={handleChange}>
+            <select className="formulario__campo" onChange={(e) => setWaist(e.target.value)}>
                 <option selected>S</option>
                 <option>M</option>
                 <option>L</option>

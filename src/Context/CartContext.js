@@ -17,6 +17,7 @@ const CartProvider = ({ children }) => {
             const cartCopy = [...productsCart];
             cartCopy[prodtIndex].quantity = cartCopy[prodtIndex].quantity + dataProduct.quantity;
             setProductsCart(cartCopy)
+            console.log("si esta vacio" ,productsCart.length);
         }
 
         console.log("producgtos desde contexto", productsCart);
@@ -25,6 +26,7 @@ const CartProvider = ({ children }) => {
     const removeItem = (id) => {
         const newProductsCart = productsCart.filter((product) => product.id !== id);
         setProductsCart(newProductsCart);
+        console.log(productsCart.length,"asdasdasdsa");
     }
 
     const clear = () => {
@@ -42,7 +44,7 @@ const CartProvider = ({ children }) => {
 
     return (
 
-        <CartContext.Provider value={{ addProductToCart, productsCart }}>
+        <CartContext.Provider value={{ addProductToCart, productsCart, removeItem, isInCart, clear }}>
             {children}
         </CartContext.Provider>
     )

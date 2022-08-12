@@ -1,0 +1,144 @@
+
+.checkout {
+    margin: 0 auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    align-items: start;
+    justify-items: stretch;
+}
+
+.container-checkout {
+    grid-column: 1/2;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.scroll {
+    overflow-y: scroll;
+}
+
+.container-table {
+    width: 100%;
+    background-color: white;
+
+
+}
+
+.table {
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.file {
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    background-color: var(--secundario);
+    text-align: center;
+}
+
+.td-img {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+th {
+    color: var(--primarioOscuro);
+    padding: 1rem;
+}
+
+
+td {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+span {
+    margin-top: 2rem;
+    width: 30%;
+}
+
+.img {
+    width: 13rem;
+}
+
+.div-button {
+    position: absolute;
+    display: flex;
+
+}
+
+.button {
+    border: none;
+    background-color: var(--primario);
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    background-color: var(--primario);
+    height: 10rem;
+    cursor: pointer;
+}
+
+.clear {
+    grid-column: 1/2;
+    width: 30%;
+    margin: 0 auto;
+    height: 5rem;
+}
+
+.pay {
+    grid-column: 2/3;
+    width: 100%;
+}
+
+.pay div {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pay h4 {
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    font-family: var(--fuentePrincipal);
+    margin: 0;
+    background-color: var(--secundario);
+}
+
+.pay p {
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 5rem;
+    color: var(--secundario);
+}
+
+.pay button {
+    height: 5rem;
+    width: 30%;
+    background-color: var(--primario);
+    margin-bottom: 2rem;
+    border-color: var(--secundario);
+    border-radius: 1rem;
+    color: white;
+    font-family: var(--fuentePrincipal);
+    font-size: 2.3rem;
+    cursor: pointer;
+}

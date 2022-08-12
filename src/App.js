@@ -6,8 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './componentes/Footer/Footer';
 import Us from './pages/Us/Us';
 import Detail from './pages/Detail';
-import Checkout from './pages/Checkout';
-import { useContext } from 'react'
+import Checkout from './pages/Checkout/Checkout';
 import CartProvider from './Context/CartContext';
 
 function App() {
