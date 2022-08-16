@@ -5,18 +5,17 @@ import { CartContext } from '../../Context/CartContext';
 const Check = () => {
 
     const { productsCart, removeItem, clear } = useContext(CartContext);
-
+/* 
     const [total, setTotal] = useState(0);
-    let sum = 0;
 
     useEffect((
         productsCart.forEach(element => {
-            
-            setTotal(...total + element.total)
+
+            setTotal(total + element.total)
         })
 
-    ), [productsCart])
-
+    ), [productsCart]) */
+    
     return (
         <>
             <h1>Listado de productos seleccionados</h1>
@@ -61,7 +60,7 @@ const Check = () => {
                 <div className='pay sombraCompleta'>
                     <div>
                         <h4>Resumen de compra</h4>
-                        <p>total: ${total}</p>
+                        <p>total: $</p>
                         <button>Ir aPagar</button>
                     </div>
                 </div>
