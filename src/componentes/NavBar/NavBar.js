@@ -1,4 +1,5 @@
 import './NavBar.css';
+import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import IconoCarrito from '../CartWidget/CartWidget';

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import '../ItemDetailContainer/ItemDetailContainer.css';
@@ -13,7 +14,7 @@ const ItemDetail = ({ dataProduct }) => {
         <>
 
             <div className="camisa">
-                <img className="camisa__imagen" src={img} alt="imagen del producto" />
+                <img className="camisa__imagen" src={`/Img/${img}`} alt="imagen del producto" />
 
                 <div className="camisa__contenido">
                     <h1 className='dataDetail'>{categoria}{' '}{nombre}</h1>

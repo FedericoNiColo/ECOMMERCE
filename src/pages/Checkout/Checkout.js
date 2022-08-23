@@ -1,4 +1,5 @@
 import './Checkout.css'
+import React from 'react';
 import { useState, useContext } from 'react';
 import Check from '../../componentes/Check/Check';
 import { CartContext } from '../../Context/CartContext';

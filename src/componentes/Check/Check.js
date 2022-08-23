@@ -1,3 +1,4 @@
+import React from 'react';
 import './Check.css'
 import { useEffect, useState, useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
@@ -5,17 +6,15 @@ import { CartContext } from '../../Context/CartContext';
 const Check = () => {
 
     const { productsCart, removeItem, clear } = useContext(CartContext);
-/* 
+
     const [total, setTotal] = useState(0);
 
-    useEffect((
-        productsCart.forEach(element => {
+    useEffect(() => {
+        const totalP = productsCart.reduce((total, product) => product.price + total, 0)
 
-            setTotal(total + element.total)
-        })
+        setTotal(totalP)
+    }, [productsCart])
 
-    ), [productsCart]) */
-    
     return (
         <>
             <h1>Listado de productos seleccionados</h1>
@@ -37,7 +36,7 @@ const Check = () => {
                                     <tr className="">
                                         <td>{product.waist}</td>
                                         <td className='td-img'>
-                                            <img className='img' src={product.image} />
+                                            <img className='img' src={`/Img/${product.image}`} />
                                             <span>{product.name}</span>
                                         </td>
                                         <td>{product.price}</td>
@@ -60,7 +59,7 @@ const Check = () => {
                 <div className='pay sombraCompleta'>
                     <div>
                         <h4>Resumen de compra</h4>
-                        <p>total: $</p>
+                        <p>total: ${total}</p>
                         <button>Ir aPagar</button>
                     </div>
                 </div>
