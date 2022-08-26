@@ -2,25 +2,66 @@ import React from 'react';
 import './Check.css'
 import { useEffect, useState, useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
-
+import Modal from '../Modal/Modal';
+import db from '../../firebaseConfig';
+import { collection, addDoc } from 'firebase/firestore';
 const Check = () => {
 
-    const { productsCart, removeItem, clear } = useContext(CartContext);
-
+    const { productsCart, removeItem, clear, setTotalPrice, totalPrice } = useContext(CartContext);
     const [total, setTotal] = useState(0);
+    const [showModal, setShowModal] = useState(false);
+    const [success, setSuccess] = useState(false)
+    const [order, setOrder] = useState({
+        items: productsCart.map((product) => {
+            return {
+                id: product.id,
+                title: product.name,
+                price: product.total
+            }
+        }),
+        buyer: {},
+        total: totalPrice
+    })
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: ''
+    })
+
 
     useEffect(() => {
-        const totalP = productsCart.reduce((total, product) => product.price + total, 0)
+        const totalP = productsCart.reduce((total, product) => product.total + total, 0)
 
-        setTotal(totalP)
+        setTotalPrice(totalP)
     }, [productsCart])
+
+    const handleChange = (e) => {
+
+        setFormData({ ...formData, [e.target.name]: e.target.value }) //.name porque el input tiene un name para cada uno.
+    }
+
+    const submitData = (e) => {
+        e.preventDefault()
+        console.log('order para enviar: ', { ...order, buyer: formData });
+        console.log('total: ', totalPrice);
+        pushData({ ...order, buyer: formData })
+        setSuccess(true)
+    }
+
+    const pushData = async (newOrder) => {
+        const collectionOrder = collection(db, 'ordenes')
+        const orderDoc = await addDoc(collectionOrder, newOrder)
+    }
+
 
     return (
         <>
             <h1>Listado de productos seleccionados</h1>
             <div className="checkout">
+                {console.log('order: ', order)}
                 <div className="container-checkout">
                     {
+
                         productsCart.map(product => (
 
                             <div key={product.id} className="container-table">
@@ -59,11 +100,53 @@ const Check = () => {
                 <div className='pay sombraCompleta'>
                     <div>
                         <h4>Resumen de compra</h4>
-                        <p>total: ${total}</p>
-                        <button>Ir aPagar</button>
+                        <p>total: ${totalPrice}</p>
+                        <button onClick={() => setShowModal(true)}>Ir aPagar</button>
                     </div>
                 </div>
+                {showModal &&
+                    <Modal
+                        setShowModal={setShowModal}
+                        title="datos de contacto"
+                    >
+                        {
+                            success ?
+                                (
+                                    <h2>Felicitaciones por la compra</h2>
+                                ) : (
+
+                                    <form onSubmit={submitData}>
+                                        <input
+                                            type="text"
+                                            name='name'
+                                            placeholder='Nombre'
+                                            onChange={handleChange}
+                                            value={formData.name}
+                                        />
+                                        <input
+                                            type="number"
+                                            name='phone'
+                                            placeholder='Telefono'
+                                            onChange={handleChange}
+                                            value={formData.phone}
+                                        />
+                                        <input
+                                            type="email"
+                                            name='email'
+                                            placeholder='Email'
+                                            onChange={handleChange}
+                                            value={formData.email}
+                                        />
+
+                                        <button>enviar</button>
+                                    </form>
+
+                                )
+                        }
+                    </Modal>
+                }
             </div >
+
         </>
     )
 }
