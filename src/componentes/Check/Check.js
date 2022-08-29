@@ -10,6 +10,7 @@ const Check = () => {
     const { productsCart, removeItem, clear, setTotalPrice, totalPrice } = useContext(CartContext);
     const [total, setTotal] = useState(0);
     const [showModal, setShowModal] = useState(false);
+    const [message, setMessage] = useState(false);
     const [success, setSuccess] = useState(false)
     const [order, setOrder] = useState({
         items: productsCart.map((product) => {
@@ -43,7 +44,12 @@ const Check = () => {
     const submitData = (e) => {
         e.preventDefault()
         console.log('order para enviar: ', { ...order, buyer: formData });
-        console.log('total: ', totalPrice);
+
+        if ([formData.name, formData.phone, formData.email].includes('')) {
+            setMessage(true)
+            return
+        }
+
         pushData({ ...order, buyer: formData })
         setSuccess(true)
     }
@@ -115,25 +121,29 @@ const Check = () => {
                                     <h2>Felicitaciones por la compra</h2>
                                 ) : (
 
-                                    <form onSubmit={submitData}>
+                                    <form className='form-modal' onSubmit={submitData}>
+                                        {message && <h5>todos los campos son obligatorios</h5>}
+                                        <label>Ingrese su nombre</label>
                                         <input
                                             type="text"
                                             name='name'
-                                            placeholder='Nombre'
+                                            placeholder='ej: juan ramirez'
                                             onChange={handleChange}
                                             value={formData.name}
                                         />
+                                        <label>Ingrese su telefono</label>
                                         <input
                                             type="number"
                                             name='phone'
-                                            placeholder='Telefono'
+                                            placeholder='ej: 2345499481'
                                             onChange={handleChange}
                                             value={formData.phone}
                                         />
+                                        <label>Ingrese su email</label>
                                         <input
                                             type="email"
                                             name='email'
-                                            placeholder='Email'
+                                            placeholder='ej: juanramirez@gamil.com'
                                             onChange={handleChange}
                                             value={formData.email}
                                         />

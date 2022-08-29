@@ -11,8 +11,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
-    width: 90vw;
-    height: 90vh;
+    width: 75vw;
+    height: 75vh;
     box-shadow: 1px 5px 5px #00000047;
     border-radius: 5px;
     padding: 20px;
@@ -28,4 +28,47 @@
 
 .modal-custom img {
     width: 100%;
+}
+
+.container-modal {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.form-modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-modal label{
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+}
+
+.form-modal input {
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    border: none;
+    box-shadow: 1px 5px 5px #00000047;
+}
+
+.form-modal button{
+    width: 20%;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: var(--blanco);
+    border:  0.2rem solid var(--secundario);
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-bottom: 0.5rem solid var(--secundario);
 }
