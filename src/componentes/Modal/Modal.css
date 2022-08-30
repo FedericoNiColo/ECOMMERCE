@@ -72,3 +72,38 @@ h5 {
     text-transform: uppercase;
     border-bottom: 0.5rem solid var(--secundario);
 }
+
+@media (max-width: 1080px ) {
+    .container-modal {
+        max-width: 85%;
+    }
+
+    .form-modal button{
+        width: 30%;
+    }
+}
+@media (max-width: 1080px ) {
+    .container-modal {
+        max-width: 100%;
+    }
+    
+    .form-modal{
+        width: 80%;
+    }
+    .form-modal button{
+        width: 35%;
+    }
+}
+@media (max-width: 425px ) {
+    .container-modal {
+        max-width: 100%;
+    }
+
+    .form-modal button{
+        width: 45%;
+    }
+
+    .form-modal{
+        width: 95%;
+    }
+}
