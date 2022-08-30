@@ -2,12 +2,14 @@ import React from 'react';
 import './ItemCount.css';
 import { useState, useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
+import Message from '../Message/Message';
 
 const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
 
     const { id, nombre, categoria, precio, img, descrip, stock } = dataProduct;
     const { addProductToCart, productsCart } = useContext(CartContext);
     const [count, setCount] = useState(0);
+    const [message, setMessage] = useState(false);
 
     const addShirt = () => {
 
@@ -22,7 +24,6 @@ const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
     }
 
     const onAdd = () => {
-        setCountSelected(count);
 
         const newProduct = {
             id: id,
@@ -36,17 +37,22 @@ const ItemCount = ({ dataProduct, setCountSelected, setWaist, waist }) => {
             total: precio * count
         }
 
-        if (count > 0) {
+        if (count > 0 && waist !== '') {
+            setCountSelected(count);
             addProductToCart(newProduct)
             console.log("desde item count: ", productsCart)
+        } else {
+            setMessage(true)
         }
 
     }
 
     return (
         <>
+            {message && <Message />}
             <select className="formulario__campo" onChange={(e) => setWaist(e.target.value)}>
-                <option selected>S</option>
+                <option selected disabled>-- Seleccionar Talle</option>
+                <option>S</option>
                 <option>M</option>
                 <option>L</option>
                 <option>XL</option>

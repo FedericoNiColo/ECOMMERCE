@@ -1,105 +1,33 @@
 
 .checkout {
     margin: 0 auto;
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 0.3fr;
-    align-items: start;
-    justify-items: stretch;
+    max-width: 40%;    
 }
 
-.container-checkout {
-    grid-column: 1/2;
-    width: 75%;
+.check {
     margin: 0 auto;
-    margin-bottom: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.scroll {
-    overflow-y: scroll;
-}
-
-.container-table {
-    width: 100%;
-    background-color: white;
-
-
-}
-
-.table {
-    width: 100%;
-    background-color: white;
-    border-collapse: collapse;
-}
-
-.file {
-    font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
-    text-transform: uppercase;
-    background-color: var(--secundario);
-    text-align: center;
-}
-
-.td-img {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-}
-
-th {
-    color: var(--primarioOscuro);
-    padding: 1rem;
 }
 
 
-td {
-    text-align: center;
-    font-size: 2rem;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-span {
-    margin-top: 2rem;
-    width: 30%;
-}
-
-.img {
-    width: 13rem;
-}
-
-.div-button {
-    position: absolute;
-    display: flex;
-
-}
-
-.button {
-    border: none;
-    background-color: var(--primario);
-    height: 100%;
-    cursor: pointer;
-}
-
-.btn {
-    border: none;
-    background-color: var(--primario);
-    height: 10rem;
-    cursor: pointer;
-}
-
-.clear {
-    grid-column: 1/2;
-    width: 30%;
+.checkout p{
+    color: var(--primario);
     margin: 0 auto;
-    height: 5rem;
+    max-width: 80%;
+}
+
+.clear{
+background-color: var(--blanco);
+padding: 1rem;
+margin-top: 0.8rem;
+margin-bottom: 0.8rem;
+color: red;
+text-transform: uppercase;
 }
 
 .pay {
-    grid-column: 2/3;
-    width: 100%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 60%;
 }
 
 .pay div {
@@ -142,3 +70,20 @@ span {
     font-size: 2.3rem;
     cursor: pointer;
 }
+
+@media (max-width: 768px ) {
+    .checkout {
+        max-width: 95%;    
+    }
+}
+@media (max-width: 1280px ) {
+    .checkout {
+        max-width: 60%;    
+    }
+}
+@media (max-width: 1440px ) {
+    .checkout {
+        max-width: 65%;    
+    }
+}
+

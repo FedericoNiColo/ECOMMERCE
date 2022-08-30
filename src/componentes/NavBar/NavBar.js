@@ -9,17 +9,25 @@ const NavBar = () => {
     const { productsCart } = useContext(CartContext);
 
     return (
-        <nav className="navegacion">
-            <Link className="navegacion__enlace navegacion__enlace--activo" to="/">Tienda</Link>
-            <Link className="navegacion__enlace" to="/category/Buzo">Buzos</Link>
-            <Link className="navegacion__enlace" to="/category/Remera">Remeras</Link>
-            <Link className="navegacion__enlace" to="/us">Nosotros</Link>
-            { productsCart.length > 0 ? 
-            (
-            <Link className="navegacion__icono" to="/cart"> <IconoCarrito /> </Link>
-            ):('')
+        <nav>
+            <ul className="navegacion">
 
-            }
+                <li className='tienda'><Link className="navegacion__enlace navegacion__enlace--activo" to="/">Tienda</Link>
+                    <ul className='tienda-lista'>
+                        <li><Link className="navegacion__enlace" to="/category/Buzo">Buzos</Link></li>
+                        <li><Link className="navegacion__enlace" to="/category/Remera">Remeras</Link></li>
+                    </ul>
+                </li>
+                <li><Link className="navegacion__enlace" to="/us">Nosotros</Link></li>
+
+
+                {productsCart.length > 0 ?
+                    (
+                        <Link className="navegacion__icono" to="/cart"> <IconoCarrito /> </Link>
+                    ) : ('')
+
+                }
+            </ul>
         </nav>
     )
 }
